@@ -11,9 +11,22 @@ operator : null,
 check_imput: function(){
   var input = document.getElementById("input");//impur usuario
   var input_text = input.textContent;//Recupera en contenido de html
+  var errors = document.querySelector("#error");
+  var input_numbre = Number(input_text);
+  if (input_numbre !== NaN) {//se validad que sea un numero
+    if (this.op1===null) {
+      this.op1=input_numbre;
+    }else {
+    this.op1=input_numbre;
+    }
+  }
 }
 };
 
+var button_operator = document.querySelectorAll("#operator button");
+for (var button in button_operator){
+button.addEventListener("click", calulator.check_input );
+}
 
 
 
