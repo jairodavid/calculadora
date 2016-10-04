@@ -1,4 +1,28 @@
+//Recuperar la informacion de HTML
+document.addEventListener("DOMContentLoaded",function(event){
+var input = document.getElementById("input");
+var output = document.getElementById("result");
+});
 
+calulator = {
+op1 : null,
+op2 : null,
+operator : null,
+check_imput: function(){
+  var input = document.getElementById("input");//impur usuario
+  var input_text = input.textContent;//Recupera en contenido de html
+}
+};
+
+
+
+
+
+
+
+
+
+/*
 // Se solicita el operador_a
 var operador_a = prompt("Ingrese su primer número:");
 // Se solicita el operador_b
@@ -39,24 +63,22 @@ function is_operator(operator) {
 
 //Funcion suma
 var suma = function (a , b){
-  document.write("El resultado es  " +  ( a + b ));
-}
+  console.log("El resultado es  " +  ( a + b ));
+};
 
 //Funcion resta
 var resta = function (a , b){
-  document.write("El resultado es  " +  ( a - b ));
-}
+  console.log("El resultado es  " +  ( a - b ));
+};
 
 //Funcion multiplicar
 var multiplicacion = function (a , b){
-  document.write("El resultado es  " +  ( a * b ));
-}
+  console.log("El resultado es  " +  ( a * b ));
+};
 //Funcion dividir
 var division = function (a , b) {
-document.write("El resultado es  " +  ( a / b ));
-
-
-}
+console.log("El resultado es  " +  ( a / b ));
+};
 
 // Función que realiza el cálculo de los valores a y b con respecto al operador
 function calcular(a, b, operador) {
@@ -94,3 +116,4 @@ function calcular(a, b, operador) {
 }
 
 calcular(operador_a, operador_b, operador);
+*/
