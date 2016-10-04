@@ -1,0 +1,55 @@
+*{
+padding: 0;
+margin: 0;
+
+}
+ul{
+list-style: none;
+direction: rtl;
+text-align: left;
+vertical-align: top;
+display: inline-block;
+}
+
+ul li{
+display: inline-block;
+margin: 8px;
+font-size: 0;
+line-height: 0;
+}
+
+button{
+width: 48px;
+height: 48px;
+}
+
+main{
+width: 416px;
+position: relative;
+top: 50%;
+transform: translateY(-50%);
+margin: auto;
+}
+
+html,body{
+height: 100%;
+min-height: 100%;
+
+
+}
+
+#input{
+margin: 8px;
+}
+
+
+#numbres{
+width: 200px;
+background-color: black;
+}
+
+
+#operators{
+width: 150px;
+background-color: blue;
+}
