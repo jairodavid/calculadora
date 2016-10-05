@@ -1,25 +1,20 @@
 //Recuperar la informacion de HTML
 var calculator = {
-op1 : null,
-op2 : null,
+result : null,
 operator : null,
+
 check_input: function(){
+  var self = calculator;
   console.log("check_input");
   var input = document.getElementById("input");
   var input_text = input.value;//Recupera en contenido de html
   var errors = document.querySelector("#error");
   var input_number = Number(input_text);
-  if(!Number.isNaN(input_number)){//se valida que sea un numero
-      console.log("is a numbre");
-    if (this.op1 === null){
-      this.op1=input_number;
-    }else {
-      this.op2=input_number;
-    }
-  }else{
-    console.log("Error");
+  if(Number.isNaN(input_number)){//se valida que sea un numero
+   input.value = "";
   }
 },
+
 set_number: function(button){
   console.log(this);
  return function(){
@@ -27,6 +22,25 @@ var input = document.getElementById("input");
 input.value = ""+input.value+button.textContent;
   };
 },
+
+exec_operator:function(button){
+var self = calculator;
+return function(){
+  self.operator = button.textContent;
+  if(self.result===null){
+
+  }
+};
+},
+
+  clear: function(){
+    var self = calculator;
+    self.ope1 = null;
+    self.ope2 = null;
+    self.operator = null;
+    var input = document.getElementById("input");
+    input.value = "";
+  },
 };
 
 
@@ -43,7 +57,9 @@ var button_numbers = controlpad.querySelectorAll("#numbers button");
 for (i=0; i<button_numbers.length;i++){
   button_numbers[i].addEventListener("click", calculator.set_number(button_numbers[i]));
 }
-console.log("Initiate");
+var button_clear = controlpad.querySelector("#clear");
+button_clear.addEventListener("click", calculator.clear);
+
 });
 
 
