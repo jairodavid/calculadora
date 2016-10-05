@@ -40,10 +40,12 @@ min-height: 100%;
 
 #input{
 margin: 8px;
+width: 43%;
+border-bottom: blue;
 }
 
 
-#numbres{
+#numbers{
 width: 200px;
 background-color: black;
 }

@@ -1,32 +1,51 @@
 //Recuperar la informacion de HTML
-document.addEventListener("DOMContentLoaded",function(event){
-var input = document.getElementById("input");
-var output = document.getElementById("result");
-});
-
-calulator = {
+var calculator = {
 op1 : null,
 op2 : null,
 operator : null,
-check_imput: function(){
-  var input = document.getElementById("input");//impur usuario
-  var input_text = input.textContent;//Recupera en contenido de html
+check_input: function(){
+  console.log("check_input");
+  var input = document.getElementById("input");
+  var input_text = input.value;//Recupera en contenido de html
   var errors = document.querySelector("#error");
-  var input_numbre = Number(input_text);
-  if (input_numbre !== NaN) {//se validad que sea un numero
-    if (this.op1===null) {
-      this.op1=input_numbre;
+  var input_number = Number(input_text);
+  if(!Number.isNaN(input_number)){//se valida que sea un numero
+      console.log("is a numbre");
+    if (this.op1 === null){
+      this.op1=input_number;
     }else {
-    this.op1=input_numbre;
+      this.op2=input_number;
     }
+  }else{
+    console.log("Error");
   }
-}
+},
+set_number: function(button){
+  console.log(this);
+ return function(){
+var input = document.getElementById("input");
+input.value = ""+input.value+button.textContent;
+  };
+},
 };
 
-var button_operator = document.querySelectorAll("#operator button");
-for (var button in button_operator){
-button.addEventListener("click", calulator.check_input );
+
+document.addEventListener("DOMContentLoaded",function(event){
+//una vez la pagina ha cargado
+var output = document.getElementById("result");
+var controlpad = document.getElementById("controlpad");
+var button_operators = document.querySelectorAll("#operators button");
+var i=0;
+for (i=0 ; i<button_operators.length; i++){
+  button_operators[i].addEventListener("click", calculator.check_input );
 }
+var button_numbers = controlpad.querySelectorAll("#numbers button");
+for (i=0; i<button_numbers.length;i++){
+  button_numbers[i].addEventListener("click", calculator.set_number(button_numbers[i]));
+}
+console.log("Initiate");
+});
+
 
 
 
